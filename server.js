@@ -26,14 +26,14 @@ app.get("/", function (request, response) {
 // display messages
 
 app.get("/messages", function (request, response) {
-  response.send(messages);
+  response.send(JSON.stringify(messages));
 });
 
 // display messages by id
 
 app.get("/messages/:id", function (request, response) {
   let messageId = request.params.id;
-  response.send(messages[messageId]);
+  response.send(JSON.stringify(messages[messageId]));
 });
 
 // add new message
